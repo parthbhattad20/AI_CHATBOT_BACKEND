@@ -1,7 +1,7 @@
 import { connect, disconnect } from "mongoose";
 async function connectToDatabase() {
     try {
-        await connect("mongodb://localhost:27017/mernChat");
+        await connect(process.env.MONGODB_URL);
     }
     catch (error) {
         console.log(error);
